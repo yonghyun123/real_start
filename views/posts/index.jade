@@ -1,7 +1,7 @@
-extends layout
+extends ../layout
 
 block content
-  h1 게시판
+  h1 설문조사 목록
   
   table.table
     tr
@@ -17,4 +17,4 @@ block content
         td= post.numComment
         td= moment(post.createdAt).format('YYYY/MM/DD')
 
-  a.btn.btn-primary(href='/posts/new') 글작성
+  a.btn.btn-primary(href='/posts/new') 설문조사 작성

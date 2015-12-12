@@ -8,6 +8,10 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
+router.get('/surveys', function(req, res, next) {
+  res.render('todos', { title: 'Express' });
+});
+
 router.get('/signin', function(req, res, next) {
   res.render('signin');
 });
@@ -25,7 +29,7 @@ router.post('/signin', function(req, res, next) {
     } else {
       req.session.user = user;
       req.flash('success', '로그인 되었습니다.');
-      res.redirect('/todos');
+      res.redirect('/');
     }
   });
 });
