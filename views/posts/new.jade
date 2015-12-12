@@ -2,19 +2,26 @@ extends ../layout
 
 block content
   h1 설문지 만들기
-  
+  br
+  br
+  br
+  br
   form(action='/posts', method='POST')
     .form-group
-      label(for='email') 이메일
-      input.form-control(name='email')
+      label(for='email') Email-Address
+      input.form-control(name='email' placeholder="input Email-Address" )
     .form-group
-      label(for='title') 제목
-      input.form-control(name='title')
+      label(for='title') Survey title
+      input.form-control(name='title' placeholder="input Title")
     .form-group
-      label(for='content') 내용
-      textarea.form-control(name='content')
+      label(for='content') Simple Content
+      textarea.form-control(name='content' placeholder="input Simple contents")
+    
+    br
+    br
+    br
     .form-action
-      a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
+      a.btn.btn-default(href='javascript:window.history.back();') back
       | &nbsp;
-      button.btn.btn-info(type='submit') 설문 완료
+      button.btn.btn-info(type='submit') OK
   

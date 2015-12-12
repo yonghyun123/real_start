@@ -6,27 +6,24 @@ block content
   .well= post.content
   
   hr
-  h3 Comment (#{post.numComment})
+  h3 Question of Number (#{post.numComment})
   table.table
     tr
-      th email
-      th question
+      th Question List
       th time
     each question in questions
       tr
-        td= question.email
-        td= question.content
+        td
+          a(href='/answers')=question.content
         td= moment(question.createdAt).format('YYYY/MM/DD')
+        td
+          a.btn.btn-xs.btn-info(href='/posts/#{question._id}/del?_method=DELETE') 삭제
   
   form.form-inline(action='/posts/' + post._id + '/comments', method='POST')
   
     .form-group
-      label.sr-only(for='email') email
-      input.form-control(name='email', placeholder='email')
-    .form-group
       label.sr-only(for='content') content
       input.form-control(name='content', size=50, placeholder='content')
-    //button.btn.btn-info 댓글저장
     button.btn.btn-info 질문추가
     
   hr

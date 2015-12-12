@@ -1,0 +1,17 @@
+extends ../layout
+
+
+  
+block content
+  h1 답변달기
+  br
+  form(action='/answers', method='POST')
+    .form-group
+      label(for='answer') Answer the Question
+      input.form-control(name='answer' placeholder="input Answer The Question")
+    br
+    br
+    .form-action
+      a.btn.btn-default(href='javascript:window.history.back();') back
+      | &nbsp;
+      button.btn.btn-info(type='submit') OK

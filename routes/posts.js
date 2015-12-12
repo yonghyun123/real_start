@@ -76,4 +76,24 @@ router.post('/:id/comments', function(req, res, next) {
   });
 });
 
+router.delete('/:id', function(req, res, next) {
+  Post.findOneAndRemove({_id: req.params.id}, function(err) {
+    if (err) {
+      return next(err);
+    }
+    req.flash('success', 'delete for survey');
+    res.redirect('/posts/'+req.params.id);
+  });
+});
+
+router.delete('/:id/del', function(req, res, next) {
+  Question.findOneAndRemove({_id: req.params.id}, function(err) {
+    if (err) {
+      return next(err);
+    }
+    req.flash('success', 'delete for question');
+    res.redirect('/posts/'+req.params.id);
+  });
+});
+
 module.exports = router;

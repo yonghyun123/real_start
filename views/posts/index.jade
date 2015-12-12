@@ -8,7 +8,7 @@ block content
       th Survey List
       th User
       th Question of Number
-      th Data
+      th Date
     each post in posts
       tr
         td
@@ -16,5 +16,7 @@ block content
         td= post.email
         td= post.numComment
         td= moment(post.createdAt).format('YYYY/MM/DD')
+        td
+          a.btn.btn-xs.btn-info(href='/posts/#{post._id}?_method=DELETE') 삭제
 
-  a.btn.btn-info(href='/posts/new') 설문조사 작성
+  a.btn.btn-info(href='/posts/new') Make Survey
