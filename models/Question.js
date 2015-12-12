@@ -12,6 +12,6 @@ var schema = new Schema({
   toObject: {virtuals: true}
 });
 
-var Comment = mongoose.model('Comment', schema);
+var Question = mongoose.model('Question', schema);
 
-module.exports = Comment;
+module.exports = Question;

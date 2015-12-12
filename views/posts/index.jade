@@ -5,10 +5,10 @@ block content
   
   table.table
     tr
-      th 제목
-      th 작성자
-      th 댓글
-      th 작성일
+      th Survey List
+      th User
+      th Question of Number
+      th Data
     each post in posts
       tr
         td
@@ -17,4 +17,4 @@ block content
         td= post.numComment
         td= moment(post.createdAt).format('YYYY/MM/DD')
 
-  a.btn.btn-primary(href='/posts/new') 설문조사 작성
+  a.btn.btn-info(href='/posts/new') 설문조사 작성

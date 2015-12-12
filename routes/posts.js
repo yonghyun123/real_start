@@ -1,6 +1,6 @@
 var express = require('express'),
     Post = require('../models/Post'),
-    Comment = require('../models/comment');
+    Question = require('../models/Question');
 var router = express.Router();
 
 /* GET posts listing. */
@@ -47,23 +47,23 @@ router.get('/:id', function(req, res, next) {
     if (err) {
       return next(err);
     }
-    comment.find({post: post.id}, function(err, comments) {
+    Question.find({post: post.id}, function(err, questions) {
       if (err) {
         return next(err);
       }
-      res.render('posts/show', {post: post, comments: comments});
+      res.render('posts/show', {post: post, questions: questions});
     });
   });
 });
 
 router.post('/:id/comments', function(req, res, next) {
-  var comment = new Comment({
+  var question = new Question({
     post: req.params.id,
     email: req.body.email,
     content: req.body.content
   });
 
-  comment.save(function(err) {
+  question.save(function(err) {
     if (err) {
       return next(err);
     }
