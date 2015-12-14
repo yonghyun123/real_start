@@ -39,6 +39,6 @@ router.get('/signout', function(req, res, next) {
   req.flash('success', '로그아웃 되었습니다.');
   res.redirect('/');
 });
-router.use('/todos', todos);
+
 
 module.exports = router;
