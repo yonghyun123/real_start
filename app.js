@@ -51,6 +51,7 @@ app.use('/bower_components',  express.static(path.join(__dirname, '/bower_compon
 app.use(function(req, res, next) {
   res.locals.currentUser = req.session.user;
   res.locals.flashMessages = req.flash();
+//  res.locals.admin=req.("model9960@naver.com");
   next();
 });
 

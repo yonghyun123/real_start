@@ -9,12 +9,14 @@
       a.navbar-brand(href='/') MENU
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav
-        li
-          //- a(href='/users') Make Survey
-          a(href='/posts/new') Make Survey
-          //- 위에부분 수정 했어 지금부터 survey 붙일거야
-        li
-          a(href='/posts') Survey List    
+        if(currentUser)
+          li
+            a(href='/posts/new') Make Survey
+          li
+            a(href='/posts') Survey List 
+          li  
+            a(href='/users') User list
+                
       ul.nav.navbar-nav.navbar-right
         if (!currentUser) 
           li

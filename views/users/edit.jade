@@ -2,7 +2,7 @@ extends ../layout
 
 block content
   .container
-    h1.page-header 회원정보 수정
+    h1.page-header Edit Personal Information
     form(action='/users/#{user._id}?_method=PUT', method='POST')
       .form-group
         label(for='name') Name
@@ -20,6 +20,6 @@ block content
         label(for='password_confirmation') Password 확인
         input.form-control(type='password', id='password_confirmation', name='password_confirmation', placeholder='변경할 Password 확인')
       div.form-actions
-        a.btn.btn-default(href='javascript:window.history.back();') 뒤로 
+        a.btn.btn-default(href='javascript:window.history.back();') back 
         | 
-        button.btn.btn-primary(type='submit') 수정
+        button.btn.btn-info(type='submit') OK
