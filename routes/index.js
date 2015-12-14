@@ -1,5 +1,4 @@
 var express = require('express'),
-    todos = require('./todos'),
     User = require('../models/User');
 var router = express.Router();
 
@@ -8,9 +7,6 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-router.get('/surveys', function(req, res, next) {
-  res.render('todos', { title: 'Express' });
-});
 
 router.get('/signin', function(req, res, next) {
   res.render('signin');
