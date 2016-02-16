@@ -23,7 +23,7 @@ router.post('/signin', function(req, res, next) {
       req.flash('danger', '비밀번호가 일치하지 않습니다.');
       res.redirect('back');
     } else {
-      req.session.user = user;
+       req.session.user = user;
       req.flash('success', '로그인 되었습니다.');
       res.redirect('/');
     }
